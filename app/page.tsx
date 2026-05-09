@@ -27,7 +27,7 @@ export default function Page() {
       tel: "905432548097",
     },
     {
-      isim: "Baran Temel",
+      isim: "Abdurrahman Çelik",
       tel: "905308773672",
     },
     {
@@ -216,7 +216,7 @@ export default function Page() {
       tel: "905432548097",
     },
     {
-      isim: "Baran Temel",
+      isim: "Abdurrahman Çelik",
       tel: "905308773672",
     },
     {
@@ -264,16 +264,46 @@ export default function Page() {
 
 </div>
 
-         <div className="mt-2">
-<a
-  href="https://www.instagram.com/dekorasyoncum65?igsh=MWppdXhnenJ5MGF4Zg%3D%3D"
-  target="_blank"
-  rel="noreferrer"
-  className="w-full flex items-center justify-center gap-3 bg-gradient-to-r from-pink-500 via-purple-500 to-orange-400 py-5 rounded-2xl font-bold text-white shadow-xl hover:scale-[1.02] transition"
->
-  <FaInstagram className="w-6 h-6" />
-  Instagram'da İncele
-</a>
+      <div className="mt-2">
+  <a
+    href="https://www.instagram.com/dekorasyoncum65?igsh=MWppdXhnenJ5MGF4Zg%3D%3D"
+    target="_blank"
+    rel="noreferrer"
+    className="w-full flex items-center justify-center gap-3 bg-gradient-to-r from-pink-500 via-purple-500 to-orange-400 py-5 rounded-2xl font-bold text-white shadow-xl hover:scale-[1.02] transition"
+  >
+    <FaInstagram className="w-6 h-6" />
+    Instagram'da İncele
+  </a>
+</div>
+
+{/* KONUM */}
+<div className="bg-white border border-gray-200 rounded-2xl p-5 shadow-lg">
+  <div className="flex items-start gap-3">
+    <div className="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center shrink-0">
+      <MapPin className="w-6 h-6 text-red-500" />
+    </div>
+
+    <div>
+      <p className="font-bold text-black text-lg">
+        Adresimiz
+      </p>
+
+      <p className="text-gray-600 text-sm mt-1 leading-relaxed">
+        İstanbul Kağıthane Çeliktepe Mahallesi
+        Yeni Yol Sokak No: 8/A
+      </p>
+
+      <a
+        href="https://www.google.com/maps/search/?api=1&query=İstanbul+Kağıthane+Çeliktepe+Yeni+Yol+Sokak+No+8A"
+        target="_blank"
+        rel="noreferrer"
+        className="inline-flex items-center gap-2 mt-3 bg-red-500 text-white px-4 py-2 rounded-xl font-semibold hover:bg-red-600 transition"
+      >
+        <MapPin className="w-4 h-4" />
+        Konumda Aç
+      </a>
+    </div>
+  </div>
 </div>
 
           <div className="grid grid-cols-3 gap-2 pt-4 border-t border-white/20">
