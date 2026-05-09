@@ -1,3 +1,4 @@
+"use client";
 import {
   BadgePercent,
   Wrench,
@@ -15,8 +16,25 @@ import {
 } from "lucide-react";
 
 import { FaInstagram } from "react-icons/fa";
+import { useState } from "react";
 
 export default function Page() {
+  const [iletisimAcik, setIletisimAcik] = useState(false);
+
+  const kisiler = [
+    {
+      isim: "Ferman Akbulak",
+      tel: "905432548097",
+    },
+    {
+      isim: "Baran Temel",
+      tel: "905308773672",
+    },
+    {
+      isim: "Feyat Akbulak",
+      tel: "905324526501",
+    },
+  ];
   return (
     <section className="relative w-full min-h-screen bg-[#f5f5f5] flex items-start md:items-center justify-center overflow-x-hidden">
 
@@ -190,29 +208,61 @@ export default function Page() {
             </div>
           </div>
 
-          <a
-            href="tel:+905432548097"
-            className="w-full flex flex-col items-center justify-center bg-black text-white py-4 rounded-2xl shadow-lg hover:opacity-90 transition"
-          >
-            <div className="flex items-center gap-2 font-semibold">
-              <Phone className="w-4 h-4" />
-              Hemen Ara
-            </div>
+         <div className="space-y-4">
 
-            <span className="text-xs text-gray-300 mt-1">
-              Duvar kağıdı satışı ve uygulama için bilgi alın.
-            </span>
+  {[
+    {
+      isim: "Ferman Akbulak",
+      tel: "905432548097",
+    },
+    {
+      isim: "Baran Temel",
+      tel: "905308773672",
+    },
+    {
+      isim: "Feyat Akbulak",
+      tel: "905324526501",
+    },
+  ].map((kisi, i) => (
+    <div
+      key={i}
+      className="bg-white border border-gray-200 rounded-2xl p-4 shadow-lg"
+    >
+      <div className="flex items-center justify-between gap-3 flex-col md:flex-row">
+
+        <div className="text-center md:text-left">
+          <p className="font-bold text-black text-lg">{kisi.isim}</p>
+          <p className="text-sm text-gray-500">
+            Satış & Bilgi Destek
+          </p>
+        </div>
+
+        <div className="flex gap-3 w-full md:w-auto">
+
+          <a
+            href={`tel:+${kisi.tel}`}
+            className="flex-1 md:flex-none flex items-center justify-center gap-2 bg-black text-white px-5 py-3 rounded-xl font-semibold hover:opacity-90 transition"
+          >
+            <Phone className="w-4 h-4" />
+            Ara
           </a>
 
           <a
-  href="https://wa.me/905432548097?text=Merhaba%20Dekorasyoncum,%20duvar%20ka%C4%9F%C4%B1d%C4%B1%20modelleri%20ve%20uygulama%20hizmeti%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
-  target="_blank"
-  rel="noreferrer"
-  className="w-full flex items-center justify-center gap-3 bg-[#25D366] py-4 rounded-2xl font-bold text-white shadow-xl hover:bg-[#1ebe5d] hover:scale-[1.01] transition"
->
-  <MessageCircle className="w-5 h-5" />
-  WhatsApp'tan Yaz
-</a>
+            href={`https://wa.me/${kisi.tel}?text=Merhaba%20Dekorasyoncum,%20duvar%20ka%C4%9F%C4%B1d%C4%B1%20modelleri%20ve%20uygulama%20hizmeti%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum.`}
+            target="_blank"
+            rel="noreferrer"
+            className="flex-1 md:flex-none flex items-center justify-center gap-2 bg-[#25D366] text-white px-5 py-3 rounded-xl font-bold hover:bg-[#1ebe5d] transition"
+          >
+            <MessageCircle className="w-4 h-4" />
+            WhatsApp
+          </a>
+
+        </div>
+      </div>
+    </div>
+  ))}
+
+</div>
 
          <div className="mt-2">
 <a
@@ -277,35 +327,58 @@ export default function Page() {
       </div>
 
       {/* YÜZEN BUTONLAR */}
-      <div className="fixed right-3 bottom-4 z-50 flex flex-col gap-3">
+     {/* YÜZEN İLETİŞİM */}
+<div className="fixed right-3 bottom-4 z-50 flex flex-col items-end gap-3">
 
-        <a
-          href="tel:+905432548097"
-          className="flex items-center gap-2 bg-black text-white px-3 py-2 rounded-full shadow-2xl border border-yellow-500/30 hover:scale-105 transition"
+  {iletisimAcik && (
+    <div className="w-[290px] rounded-3xl bg-white border border-gray-200 shadow-2xl p-3 space-y-3 animate-in fade-in slide-in-from-bottom-3 duration-300">
+      {kisiler.map((kisi, i) => (
+        <div
+          key={i}
+          className="rounded-2xl bg-gray-50 border border-gray-200 p-3"
         >
-          <span className="w-8 h-8 rounded-full bg-yellow-500 text-black flex items-center justify-center">
-            <Phone className="w-4 h-4" />
-          </span>
-          <span className="font-bold text-xs md:text-sm whitespace-nowrap">
-            Hemen Ara
-          </span>
-        </a>
+          <p className="text-sm font-bold text-black mb-2">
+            {kisi.isim}
+          </p>
 
-        <a
-          href="https://wa.me/905432548097?text=Merhaba,%20duvar%20ka%C4%9F%C4%B1d%C4%B1%20sat%C4%B1%C5%9F%C4%B1%20ve%20uygulama%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
-          target="_blank"
-          rel="noreferrer"
-          className="flex items-center gap-2 bg-yellow-500 text-black px-3 py-2 rounded-full shadow-2xl border border-black/10 hover:scale-105 transition"
-        >
-          <span className="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center">
-            <MessageCircle className="w-4 h-4" />
-          </span>
-          <span className="font-bold text-xs md:text-sm whitespace-nowrap">
-            Hemen Yaz
-          </span>
-        </a>
+          <div className="grid grid-cols-2 gap-2">
+            <a
+              href={`tel:+${kisi.tel}`}
+              className="flex items-center justify-center gap-1 bg-black text-white py-2 rounded-xl text-xs font-bold"
+            >
+              <Phone className="w-4 h-4" />
+              Ara
+            </a>
 
-      </div>
+            <a
+              href={`https://wa.me/${kisi.tel}?text=Merhaba%20Dekorasyoncum,%20duvar%20ka%C4%9F%C4%B1d%C4%B1%20modelleri%20ve%20uygulama%20hizmeti%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum.`}
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center justify-center gap-1 bg-[#25D366] text-white py-2 rounded-xl text-xs font-bold"
+            >
+              <MessageCircle className="w-4 h-4" />
+              WhatsApp
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  )}
+
+  <button
+    onClick={() => setIletisimAcik(!iletisimAcik)}
+    className="flex items-center gap-2 bg-black text-white px-4 py-3 rounded-full shadow-2xl border border-yellow-500/30 hover:scale-105 transition"
+  >
+    <span className="w-9 h-9 rounded-full bg-yellow-500 text-black flex items-center justify-center">
+      <MessageCircle className="w-5 h-5" />
+    </span>
+
+    <span className="font-bold text-sm">
+      İletişim
+    </span>
+  </button>
+
+</div>
 
     </section>
   );
