@@ -207,7 +207,54 @@ export default function Page() {
               </p>
             </div>
           </div>
+{/* KATALOGLAR */}
+<div className="bg-black border border-yellow-500/30 rounded-3xl p-5 shadow-2xl">
+  <div className="text-center mb-5">
+    <p className="text-yellow-400 text-xs font-bold tracking-[0.25em] uppercase">
+      Kataloglarımız
+    </p>
 
+    <h3 className="text-white text-2xl md:text-3xl font-black mt-2">
+      Duvar Kağıdı Modellerimizi İnceleyin
+    </h3>
+
+    <p className="text-gray-300 text-sm mt-2 leading-relaxed">
+      Farklı model, desen ve koleksiyon seçeneklerini görmek için kataloglarımızı inceleyebilirsiniz.
+    </p>
+  </div>
+
+  <div className="grid gap-3">
+    <a
+      href="https://drive.google.com/drive/folders/1hTYfuTpCNm5cwnoGWr-7452f-njKNfyD"
+      target="_blank"
+      rel="noreferrer"
+      className="flex items-center justify-between gap-3 bg-white text-black rounded-2xl px-4 py-4 font-bold shadow-md hover:scale-[1.02] transition"
+    >
+      <span>Katalog 1</span>
+      <span className="text-yellow-600 text-sm">İncele →</span>
+    </a>
+
+    <a
+      href="https://www.ekatalog.gen.tr/katalog/alfa-wallpaper/"
+      target="_blank"
+      rel="noreferrer"
+      className="flex items-center justify-between gap-3 bg-yellow-400 text-black rounded-2xl px-4 py-4 font-bold shadow-md hover:scale-[1.02] transition"
+    >
+      <span>Alfa Wallpaper Kataloğu</span>
+      <span className="text-black text-sm">İncele →</span>
+    </a>
+
+    <a
+      href="https://drive.google.com/drive/folders/1Lv2akSBMdqgUUPLSZmVMLoJi6uJGguRT?usp=sharing"
+      target="_blank"
+      rel="noreferrer"
+      className="flex items-center justify-between gap-3 bg-white text-black rounded-2xl px-4 py-4 font-bold shadow-md hover:scale-[1.02] transition"
+    >
+      <span>Katalog 2</span>
+      <span className="text-yellow-600 text-sm">İncele →</span>
+    </a>
+  </div>
+</div>
          <div className="space-y-4">
 
   {[
